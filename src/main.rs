@@ -1,8 +1,9 @@
-mod routes;
 mod dtos;
+mod routes;
 
 use axum::{
-    routing::{get, post}, Router,
+    routing::{get, post},
+    Router,
 };
 use routes::users::create_user;
 use std::{
