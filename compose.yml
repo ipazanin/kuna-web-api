@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  kuna-web-api:
+    container_name: lkuna-web-api
+    image: kuna-web-api
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4000:4000'
+    networks:
+      - kuna-web-api
+
+networks:
+  kuna-web-api:

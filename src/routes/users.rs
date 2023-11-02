@@ -10,7 +10,7 @@ pub async fn create_user(
     // insert your application logic here
     let user = User {
         id: 1337,
-        username: payload.username().to_string(),
+        username: payload.username().clone(),
     };
 
     // this will be converted into a JSON response

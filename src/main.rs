@@ -13,6 +13,8 @@ use std::{
 
 #[tokio::main]
 async fn main() {
+    rust_test();
+
     // initialize tracing
     tracing_subscriber::fmt::init();
 
@@ -31,4 +33,8 @@ async fn main() {
         .serve(app.into_make_service())
         .await
         .unwrap();
+}
+
+fn rust_test() {
+    println!("Test rust function");
 }
