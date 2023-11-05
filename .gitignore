@@ -3,3 +3,6 @@
 
 # Mac
 .DS_Store
+
+# Cargo local environment variables
+.cargo/config.toml

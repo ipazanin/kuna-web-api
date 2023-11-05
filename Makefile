@@ -6,12 +6,15 @@ build::
 
 check::
 	cargo check
+	cargo clippy -- -D warnings
+	cargo fmt --all -- --check
 
 test::
 	 cargo test
 
 format::
-	cargo clippy
+	cargo clippy --fix
+	cargo fmt --all
 
 clean::
 	rm -rf ./target
