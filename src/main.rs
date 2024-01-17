@@ -1,12 +1,14 @@
 mod config;
+mod data;
 mod dtos;
+mod models;
 mod routes;
 
 use axum::{
     routing::{get, post},
     Router,
 };
-use routes::users::create_user;
+use routes::{transactions::get_all_transactions, users::create_user};
 use std::{
     net::{SocketAddr, SocketAddrV4},
     str::FromStr,
@@ -27,7 +29,8 @@ async fn main() {
         // `GET /` goes to `root`
         .route("/", get(routes::root::hello_world))
         // `POST /users` goes to `create_user`
-        .route("/users", post(create_user));
+        .route("/users", post(create_user))
+        .route("/transactions", get(get_all_transactions));
 
     let address = format!("0.0.0.0:{port}");
 
