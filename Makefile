@@ -33,3 +33,10 @@ docker-run::
 
 compose::
 	docker compose -f compose.yml up  --build
+
+compose-database::
+	docker-compose -f scripts/docker-compose/database.yaml -f scripts/docker-compose/database-environment.yaml up --build
+
+compose-database-down::
+	docker-compose -f scripts/docker-compose/database.yaml -f scripts/docker-compose/database-environment.yaml down
+
